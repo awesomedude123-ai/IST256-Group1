@@ -52,15 +52,19 @@ namespace FinalProject.Web.Controllers
 		/// Privacy page end point
 		/// </summary>
 		/// <returns></returns>
+
 		/// 
 	
 		public IActionResult About(){
 			return View();
 		}
+
+
 		public IActionResult Privacy()
 		{
 			return View();
 		}
+
 		/// <summary>
 		/// Display the group contract.
 		/// </summary>
@@ -69,6 +73,7 @@ namespace FinalProject.Web.Controllers
 		{
 			return View();
 		}
+
 
 		/// <summary>
 		/// Error page to show to the user
