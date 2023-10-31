@@ -52,10 +52,28 @@ namespace FinalProject.Web.Controllers
 		/// Privacy page end point
 		/// </summary>
 		/// <returns></returns>
+
+		/// 
+	
+		public IActionResult About(){
+			return View();
+		}
+
+
 		public IActionResult Privacy()
 		{
 			return View();
 		}
+
+		/// <summary>
+		/// Display the group contract.
+		/// </summary>
+		/// <returns>The contract view.</returns>
+		public IActionResult Contract()
+		{
+			return View();
+		}
+
 
 		/// <summary>
 		/// Error page to show to the user
