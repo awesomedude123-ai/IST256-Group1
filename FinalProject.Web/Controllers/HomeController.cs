@@ -74,13 +74,12 @@ namespace FinalProject.Web.Controllers
 			return View();
 		}
 
-
 		/// <summary>
 		/// Error page to show to the user
 		/// </summary>
 		/// <param name="id">ID of the error</param>
 		/// <returns>View telling user there has been an error.  Also emails the error out</returns>
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		//[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error(string id)
 		{
 			var feature = this.HttpContext.Features.Get<IExceptionHandlerFeature>();
