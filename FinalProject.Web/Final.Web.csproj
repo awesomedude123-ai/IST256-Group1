@@ -7,7 +7,6 @@
 		<RootNamespace>FinalProject.Web</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-		<PreserveCompilationReferences>true</PreserveCompilationReferences>
 	</PropertyGroup>
 
 	<ItemGroup>
