@@ -28,8 +28,8 @@ namespace FinalProject.Web.Controllers
 		/// <param name="mailService">email service for sending mail</param>
 		/// <param name="config">Configuration for the a[[;ocatopm</param>
 		/// <param name="logger">Logger to log errors and such</param>
-		public HomeController(IMailService mailService, 
-			IConfiguration config, 
+		public HomeController(IMailService mailService,
+			IConfiguration config,
 			ILogger<HomeController> logger)
 		{
 			this.mailService = mailService;
@@ -44,7 +44,7 @@ namespace FinalProject.Web.Controllers
 		[HttpGet]
 		public IActionResult Index()
 		{
-			
+
 			return View();
 		}
 
@@ -54,8 +54,9 @@ namespace FinalProject.Web.Controllers
 		/// <returns></returns>
 
 		/// 
-	
-		public IActionResult About(){
+
+		public IActionResult About()
+		{
 			return View();
 		}
 
@@ -73,6 +74,24 @@ namespace FinalProject.Web.Controllers
 		{
 			return View();
 		}
+		public IActionResult Womens()
+		{
+			return View();
+		}
+		public IActionResult Mens()
+		{
+			return View();
+		}
+		public IActionResult Accessories()
+		{
+			return View();
+		}
+		public IActionResult Shoppingcart()
+		{
+			return View();
+		}
+		
+
 
 		/// <summary>
 		/// Error page to show to the user
