@@ -86,6 +86,12 @@ namespace FinalProject.Web.Controllers
 		{
 			return View();
 		}
+		public IActionResult Shoppingcart()
+		{
+			return View();
+		}
+		
+
 
 		/// <summary>
 		/// Error page to show to the user
