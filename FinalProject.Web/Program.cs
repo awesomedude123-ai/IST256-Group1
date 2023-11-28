@@ -2,7 +2,7 @@ using Microsoft.Identity.Web.UI;
 using FinalProject.Web.ViewModels;
 using FinalProject.Web.Services;
 
-try
+try 
 {
 
 	var builder = WebApplication.CreateBuilder(args);
