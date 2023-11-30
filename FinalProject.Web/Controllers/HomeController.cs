@@ -78,7 +78,9 @@ var model = repo.GetAllCategories();
 		}
 		public IActionResult Womens()
 		{
+			
 			return View();
+			
 		}
 		public IActionResult Mens()
 		{
