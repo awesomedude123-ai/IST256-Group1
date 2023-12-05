@@ -1,8 +1,165 @@
-@model IEnumerable<Category>;
+@model List<Category>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="https://fonts.cdnfonts.com/css/bubble-letters" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<body style="background-color:rgb(245, 245, 245)">
+
+    <div class="jumbotron jumbotron-fluid text-white text-center mb-0" style="background-color: #a8c6e7;">
+        <div class="container">
+            <h1 class="display-3"
+                style="font-family: 'Lobster', cursive; text-transform: uppercase; color: white; font-size: 3.5rem; font-weight: bold;">
+                KoalasKlothing
+            </h1>
+            <p class="lead"
+                style="font-family: 'Lobster', cursive; text-transform: uppercase; color: white; font-size: 1.8rem; font-weight: bold;">
+                Discover Our Most Popular Winter Styles!
+            </p>
+        </div>
+    </div>
+
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img-top {
+            height: 350px; /
+            object-fit: cover; 
+        }
+
+        .card-body {
+            flex: 1;
+        }
+    </style>
+
+    <div class="container text-center mt-4">
+        <div class="row">
+            @for (int i=0; i< 3; i++)
+            {
+                var item = Model[i];
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm h-100">
+                        <img src="@ViewBag.Images[i]" class="card-img-top" alt="@item.CategoryName">
+                        <div class="card-body">
+                            <a asp-controller="Home" asp-action="@ViewBag.Items[i]" class="text-decoration-none text-dark">
+                                <h3 class="card-title">@item.CategoryName</h3>
+                                <p class="card-text">@item.Description</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+@* @model List<Category>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Include necessary CSS/links -->
+<link href="https://fonts.cdnfonts.com/css/bubble-letters" rel="stylesheet">
+
+<style>
+    /* Style for category cards */
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 10px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <h1 class="display-4 text-center"
+                style="font-family: 'Bubble Letters', sans-serif; font-size: 3rem; color: rgb(88, 105, 231); font-weight: bold">
+                KoalasKlothing
+            </h1>
+
+            <h5 class="display-4 text-center"
+                style="font-family: 'Bubble Letters', sans-serif; font-size: 2rem; color: rgb(218, 29, 29); font-weight: bold">
+                Most Popular Winter Styles!
+            </h5>
+            <div class="col-md-6">
+                <img src="~/images/snow.png" alt="snow flake" height="75px" width="75px" style="margin-top: 10px;">
+            </div>
+            <div class="col-md-6 text-end">
+                <img src="~/images/snow.png" alt="snow flake" height="75px" width="75px" style="margin-top: 10px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row" style="text-align: center;">
+            @for (int i=0; i< 3; i++)
+            {
+                var item = Model[i];
+                <div class="col-md-4">
+                    <div class="card card-block mx-2 mb-4">
+                        <img src="@ViewBag.Images[i]" alt="@item.CategoryName" />
+
+<a asp-controller="Home" asp-action="@ViewBag.Items[i]" style="text-decoration: none; color: inherit;">
+                            <h3>@item.CategoryName</h3>
+                            <p>@item.Description</p>
+
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@* 
+<div class="container text-center">
+    <div class="row" style="text-align: center;">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4"> <!-- Adding col-md-4 class here -->
+                <div class="card card-block mx-2 mb-4" style="max-width: 250px; max-height: 390px;">
+                    <a href="details.cshtml" style="text-decoration: none; color: inherit;">
+                        <h3>@item.CategoryName</h3>
+                        <p>@item.Description</p>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div> 
+
+---------------------------------------------------------------------------------------------------------------
+
+
+@* @model IEnumerable<Category>;
 @{
 	ViewData["Title"] = "Home Page";
 }
 <link href="https://fonts.cdnfonts.com/css/bubble-letters" rel="stylesheet">
+
 @foreach(var item in Model)
 {
     <div>
@@ -29,14 +186,19 @@
 		</div>
 	</div>
 
-	<div class="container text-center">
+    <div class="container text-center">
     <div class="row" style="text-align: center;">
-        <div class="card card-block mx-2 mb-4" style="max-width: 250px; max-height: 390px;">
-            <a href="details.cshtml" style="text-decoration: none; color: inherit;">
-                <img src="~/images/ripped black jeans.png" alt="Ripped Jeans" height="250px" width="220px">
-                <p>Ripped Jeans- $60.00</p>
-            </a>
-        </div>
+        @foreach (var item in Model)
+        {
+            <div class="card card-block mx-2 mb-4" style="max-width: 250px; max-height: 390px;">
+                <a href="details.cshtml" style="text-decoration: none; color: inherit;">
+                    <h3>@item.CategoryName</h3>
+                    <p>@item.Description</p>
+                </a>
+            </div>
+        }
+    </div>
+    </div>
         <div class="card card-block mx-2 mb-4" style="max-width: 250px; max-height: 390px;">
             <a href="details.cshtml" style="text-decoration: none; color: inherit;">
                 <img src="~/images/star pants.png" alt="Star Pants" height="250px" width="220px">
@@ -80,4 +242,4 @@
             </a>
         </div>
     </div>
-</div>
+</div> *@
