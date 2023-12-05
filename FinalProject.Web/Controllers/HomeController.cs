@@ -46,7 +46,22 @@ private readonly AdventureWorksRepository repo;
 		[HttpGet]
 		public IActionResult Index()
 		{
-var model = repo.GetAllCategories();
+			List<string> Items = new()
+			{
+				"Mens",
+				"Womens",
+				"Accessories"
+			};
+			List<string> Images = new()
+			{
+				"/images/beverage.png",
+				"/images/condiments.png",
+				"/images/confections.png"
+			};
+ViewBag.Images = Images;
+ViewBag.Items = Items;
+
+var model = repo.GetAllCategories().ToList();
 			return View(model);
 		}
 
