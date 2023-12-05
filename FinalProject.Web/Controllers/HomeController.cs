@@ -105,7 +105,7 @@ var model = repo.GetAllCategories().ToList();
 		{
 			return View();
 		}
-		public IActionResult Shoppingcart()
+		public IActionResult Order()
 		{
 			return View();
 		}

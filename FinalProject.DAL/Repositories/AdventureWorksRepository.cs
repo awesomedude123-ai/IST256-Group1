@@ -36,14 +36,14 @@ namespace FinalProject.DAL.Repositories
 			var httpclient = clientFactory.CreateClient();
 
 			var httpResponseMessage = httpclient.SendAsync(httpRequestMessage).Result;
-			
+
 			httpResponseMessage.EnsureSuccessStatusCode();
 
 			logger.LogDebug("Got categories");
 
 			var result = httpResponseMessage.Content.ReadAsStringAsync().Result;
 
-			IEnumerable<Category>  data = JsonConvert.DeserializeObject<IEnumerable<Category>>(result) ?? new List<Category>();
+			IEnumerable<Category> data = JsonConvert.DeserializeObject<IEnumerable<Category>>(result) ?? new List<Category>();
 
 			return data;
 

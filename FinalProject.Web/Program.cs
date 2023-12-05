@@ -4,7 +4,7 @@ using FinalProject.Web.Services;
 using FinalProject.DAL.Models;
 using FinalProject.DAL.Repositories;
 
-try 
+try
 {
 
 	var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +18,7 @@ try
 	{
 		options.Secure = CookieSecurePolicy.Always;
 	});
-	
+
 	builder.Host.ConfigureServices(services =>
 	{
 
