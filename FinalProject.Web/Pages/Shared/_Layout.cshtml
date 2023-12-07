@@ -59,7 +59,24 @@
                             <a class="nav-link text-light" asp-controller="Home" asp-action="Contract" asp-area="">About
                                 us</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"  >
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="Womens" asp-area="">Women's Clothing</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="Mens" asp-area="">Men's Clothing</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="Accessories" asp-area="">Accessories</a>
+                                </li>
+                            </ul>
+                        </li>
+                        @* <li class="nav-item">
                             <a class="nav-link text-light" asp-controller="Home" asp-action="Womens" asp-area="">Women's
                                 Clothing</a>
                         </li>
@@ -70,7 +87,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-controller="Home" asp-action="Accessories"
                                 asp-area="">Accessories</a>
-                        </li>
+                        </li> *@
                          <li class="nav-item">
                             <a class="nav-link text-light" asp-controller="Home" asp-action="Order"
                                 asp-area="">Order Now!</a>
